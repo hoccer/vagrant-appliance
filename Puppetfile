@@ -10,3 +10,5 @@ forge "http://forge.puppetlabs.com"
 #   :ref => 'feature/master/dans_refactor'
 
 mod 'puppetlabs/postgresql'
+
+mod 'puppetlabs/mongodb'

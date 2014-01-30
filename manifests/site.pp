@@ -7,11 +7,14 @@ exec { 'apt-update':
 Exec['apt-update'] -> Package <| |>
 
 # Postgresql server
+# see https://forge.puppetlabs.com/puppetlabs/postgresql
 class { 'postgresql::server':
-  listen_addresses  => '*'
+  listen_addresses  => '*',
+  # This obviously still needs tweaking
+  postgres_password => 'postgres!'
 }
 
-postgresql::server::db { 'filecache':
+postgresql::server::db { 'talk':
   user     => 'talk',
   password => postgresql_password('talk', 'talk'),
 }
@@ -36,4 +39,5 @@ class users {
 node default {
   include users
   include postgresql::server
+  include mongodb
 }
