@@ -59,7 +59,6 @@ Two important rake tasks are provided
 
 * `rake vm:provision` - Any changes to modules or manifests can be reflected in a running VM with this task. Takes care of puppet-librarian modules and reprovisioning.
 
-
 ## Notes
 
 This setup uses librarian-puppet to manage the puppet module dependencies (similar to bundler but for puppet modules).
@@ -69,6 +68,11 @@ For listing the currently installed modules execute
 <pre>
 $ librarian-puppet show
 </pre>
+
+## Using VM as deployment target
+
+In order to deploy to the VM via a capistrano setup it may be necessary to
+add your ssh pubkey to the deployment user's `authorized_keys`
 
 ## TODOs
 

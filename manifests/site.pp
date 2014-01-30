@@ -6,12 +6,13 @@ exec { 'apt-update':
 
 Exec['apt-update'] -> Package <| |>
 
-# Postgresql server
+# Postgresql
 # see https://forge.puppetlabs.com/puppetlabs/postgresql
 class { 'postgresql::server':
-  listen_addresses  => '*',
   # This obviously still needs tweaking
-  postgres_password => 'postgres!'
+  ip_mask_allow_all_users => '0.0.0.0/0',
+  listen_addresses        => 'localhost 192.168.60.1',
+  postgres_password       => 'postgres!'
 }
 
 postgresql::server::db { 'talk':
@@ -19,19 +20,29 @@ postgresql::server::db { 'talk':
   password => postgresql_password('talk', 'talk'),
 }
 
+# MongoDB
+# see https://forge.puppetlabs.com/puppetlabs/mongodb
+class { 'mongodb' :
+    init => 'upstart',
+}
+
+# Nginx
+# see https://forge.puppetlabs.com/puppetlabs/nginx
+class { 'nginx': }
+
 # setup required users
 class users {
     user { 'deployment':
         ensure     => present,
         groups     => ['adm','admin', 'sudo'],
         managehome => true,
-        shell => "/bin/bash",
+        shell      => '/bin/bash',
     }
     user { 'talk':
         ensure     => present,
         groups     => [],
         managehome => true,
-        shell => "/bin/bash",
+        shell      => '/bin/bash',
     }
 }
 

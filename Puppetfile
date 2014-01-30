@@ -12,3 +12,5 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/postgresql'
 
 mod 'puppetlabs/mongodb'
+
+mod 'puppetlabs/nginx'
