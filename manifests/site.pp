@@ -11,7 +11,7 @@ Exec['apt-update'] -> Package <| |>
 class { 'postgresql::server':
   # This obviously still needs tweaking
   ip_mask_allow_all_users => '0.0.0.0/0',
-  listen_addresses        => 'localhost 192.168.60.1',
+  listen_addresses        => '*',
   postgres_password       => 'postgres!'
 }
 
