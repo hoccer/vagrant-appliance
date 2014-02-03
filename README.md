@@ -40,13 +40,22 @@ $ vagrant up
 </pre>
 
 This should produce an output similar to this:
-
 <pre>
 ...
 </pre>
 
-Subsequent provisioning can usually happen while the vm is running via
+check if VM is running via
+<pre>
+$ vagrant status
+$ vagrant ssh
+</pre>
 
+access the VM via
+<pre>
+$ vagrant ssh
+</pre>
+
+Subsequent provisioning can usually happen while the vm is running via
 <pre>
 $ vagrant provision
 </pre>
