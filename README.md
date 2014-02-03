@@ -85,3 +85,15 @@ add your ssh pubkey to the deployment user's `authorized_keys`
 ## TODOs
 
 * maybe use rake to make management of vagrant VM simpler
+
+## Updating puppet dependencies
+
+The puppet modules are defined by the Puppetfile and the Puppetfile.lock.
+If they are changed the puppet modules should be refreshed.
+
+Ideally by using:
+
+<pre>
+$ librarian-puppet clean
+$ librarian-puppet install
+</pre>
