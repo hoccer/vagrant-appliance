@@ -55,7 +55,7 @@ class { 'mongodb' :
 
 # Nginx
 # see https://forge.puppetlabs.com/puppetlabs/nginx
-class { 'nginx': }
+# class { 'nginx': }
 
 # setup the node...
 node default {
