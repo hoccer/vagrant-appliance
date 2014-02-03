@@ -22,6 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # TODO filecache port
 
+  # Postgresql port (++1 from default)
+  config.vm.network :forwarded_port, guest: 5432, host: 5433
+
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network :private_network, ip: "192.168.60.10"

@@ -14,3 +14,5 @@ mod 'puppetlabs/postgresql'
 mod 'puppetlabs/mongodb'
 
 mod 'puppetlabs/nginx'
+
+mod 'saz/locales'

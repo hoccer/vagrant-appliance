@@ -17,9 +17,11 @@ FORGE
       puppetlabs/firewall (>= 0.0.4)
       puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs/stdlib (4.1.0)
+    saz/locales (2.0.0)
 
 DEPENDENCIES
   puppetlabs/mongodb (>= 0)
   puppetlabs/nginx (>= 0)
   puppetlabs/postgresql (>= 0)
+  saz/locales (>= 0)
 
