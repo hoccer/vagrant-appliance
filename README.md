@@ -47,7 +47,6 @@ This should produce an output similar to this:
 check if VM is running via
 <pre>
 $ vagrant status
-$ vagrant ssh
 </pre>
 
 access the VM via
