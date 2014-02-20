@@ -63,4 +63,5 @@ node default {
   include users
   include postgresql::server
   include mongodb
+  include java7
 }

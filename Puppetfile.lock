@@ -19,7 +19,16 @@ FORGE
     puppetlabs/stdlib (4.1.0)
     saz/locales (2.0.0)
 
+GIT
+  remote: https://github.com/softek/puppet-java7.git
+  ref: master
+  sha: 250fd6ecaeed879d29457a2a28426ae3392d7d56
+  specs:
+    java7 (0.1.0)
+      puppetlabs/apt (>= 1.0.1)
+
 DEPENDENCIES
+  java7 (>= 0)
   puppetlabs/mongodb (>= 0)
   puppetlabs/nginx (>= 0)
   puppetlabs/postgresql (>= 0)

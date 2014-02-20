@@ -16,3 +16,6 @@ mod 'puppetlabs/mongodb'
 mod 'puppetlabs/nginx'
 
 mod 'saz/locales'
+
+mod 'java7',
+    :git => 'https://github.com/softek/puppet-java7.git'
