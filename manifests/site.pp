@@ -53,9 +53,14 @@ class { 'mongodb' :
     init => 'upstart',
 }
 
+# VIM
+class { 'vim':
+  ensure => 'present'
+}
+
 # Nginx
-# see https://forge.puppetlabs.com/puppetlabs/nginx
-# class { 'nginx': }
+# see https://github.com/hoccer/vagrant-appliance/wiki/Nginx-setup
+# -> Currently not in scope of the puppet setup
 
 # setup the node...
 node default {
@@ -64,4 +69,5 @@ node default {
   include postgresql::server
   include mongodb
   include java7
+  include vim
 }

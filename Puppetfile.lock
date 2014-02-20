@@ -18,6 +18,7 @@ FORGE
       puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs/stdlib (4.1.0)
     saz/locales (2.0.0)
+    saz/vim (2.0.3)
 
 GIT
   remote: https://github.com/softek/puppet-java7.git
@@ -33,4 +34,5 @@ DEPENDENCIES
   puppetlabs/nginx (>= 0)
   puppetlabs/postgresql (>= 0)
   saz/locales (>= 0)
+  saz/vim (>= 0)
 
