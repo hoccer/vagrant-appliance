@@ -58,6 +58,13 @@ class { 'vim':
   ensure => 'present'
 }
 
+class pwgen {
+  package { 'pwgen':
+    ensure => installed;
+  }
+}
+
+
 # Nginx
 # see https://github.com/hoccer/vagrant-appliance/wiki/Nginx-setup
 # -> Currently not in scope of the puppet setup
@@ -70,4 +77,5 @@ node default {
   include mongodb
   include java7
   include vim
+  include pwgen
 }
