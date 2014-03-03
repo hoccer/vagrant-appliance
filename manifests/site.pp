@@ -49,9 +49,12 @@ postgresql::server::db { 'talk':
 
 # MongoDB
 # see https://forge.puppetlabs.com/puppetlabs/mongodb
-class { 'mongodb' :
-    init => 'upstart',
-}
+class {'::mongodb::globals':
+  manage_package_repo => true,
+}->
+class {'::mongodb::server': }->
+class {'::mongodb::client': }
+
 
 # VIM
 class { 'vim':
@@ -74,7 +77,7 @@ node default {
   include locales
   include users
   include postgresql::server
-  include mongodb
+  # include mongodb
   include java7
   include vim
   include pwgen
